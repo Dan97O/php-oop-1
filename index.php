@@ -16,31 +16,40 @@ mettendo ciascuna classe nel proprio file e magari raggruppare tutte le classi i
 organizzando il layout dividendo la struttura ed i contenuti in file e parziali dedicati.
 
  */
+require_once __DIR__ . "/Models/Movie.php";
+require_once __DIR__ . "/db.php";
 
-class Movie
-{
-    public $name;
-    public $genre;
+?>
 
-    public function __construct($name, $genre)
-    {
-        $this->name = $name;
-        $this->genre = $genre;
-    }
+<!DOCTYPE html>
+<html lang="en">
 
-    public function get_name()
-    {
-        return $this->name;
-    }
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movies</title>
+</head>
 
-    public function get_genre()
-    {
-        return $this->genre;
-    }
-}
+<body>
+  <main id="app_main">
+    <div class="container">
+      <h1>Lista Film</h1>
+      <ul>
+        <li>
+          <h2><?=$matrix->get_name()?></h2>
+          <p>Genere:<?=$matrix->get_genre()?> </p>
+        </li>
+        <li>
+          <h2><?=$avatar->get_name()?></h2>
+          <p>Genere:<?=$avatar->get_genre()?> </p>
+        </li>
+      </ul>
+    </div>
+    <!-- /.container -->
+  </main>
+  <!-- /#app_main -->
 
-$matrix = new Movie('Matrix', 'Action');
-$avatar = new Movie('Avatar', 'Sci-fi');
+</body>
 
-var_dump($matrix);
-var_dump($avatar);
+</html>
