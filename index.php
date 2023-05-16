@@ -36,14 +36,12 @@ require_once __DIR__ . "/db.php";
     <div class="container">
       <h1>Lista Film</h1>
       <ul>
-        <li>
-          <h2><?=$matrix->get_name()?></h2>
-          <p>Genere:<?=$matrix->get_genre()?> </p>
-        </li>
-        <li>
-          <h2><?=$avatar->get_name()?></h2>
-          <p>Genere:<?=$avatar->get_genre()?> </p>
-        </li>
+        <?php foreach ($movies as $movie): ?>
+          <li>
+            <h2><?=$movie->get_name()?></h2>
+            <p>Genere: <?=$movie->get_genre()?></p>
+          </li>
+        <?php endforeach;?>
       </ul>
     </div>
     <!-- /.container -->
